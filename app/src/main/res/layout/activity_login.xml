@@ -1,29 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:bind="http://schemas.android.com/tools"
+    >
 
     <data>
 
+        <import type="com.nhahv0902.notebook.util.ConstantUtils.Fonts"/>
+        <import type="android.view.View"/>
+
         <variable
             name="viewModel"
-            type="com.nhahv0902.notebook.screen.login.LoginViewModel" />
+            type="com.nhahv0902.notebook.screen.login.LoginViewModel"
+            />
 
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.nhahv0902.notebook.screen.login.LoginActivity">
+        android:background="@drawable/bg_screen"
+        >
 
-        <TextView
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/text_wel_com"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
+            android:layout_marginTop="@dimen/dp_120"
+            android:gravity="center"
+            android:text="@string/login_welcome_notebook"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_46"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            bind:type_fonts="@{Fonts.CALLIGRAPHY}"
+            />
+
+        <FrameLayout
+            android:id="@+id/frame_facebook"
+            android:layout_width="@dimen/dp_240"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:background="@drawable/bg_login_action_state"
+            android:onClick="@{() -> viewModel.onFacebookStartMain()}"
+            android:visibility="@{viewModel.viewLogin ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toTopOf="@id/frame_google"
+            app:layout_constraintLeft_toLeftOf="@id/frame_google"
+            app:layout_constraintRight_toRightOf="@id/frame_google"
+            >
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_20"
+                app:srcCompat="@drawable/ic_login_facebook_white_24dp"
+                />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/text_login_facebook"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/sp_20"
+                />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frame_google"
+            android:layout_width="@dimen/dp_240"
+            android:layout_height="@dimen/dp_50"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dp_100"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="@drawable/bg_login_action_state"
+            android:onClick="@{() -> viewModel.onGoogleStartMain()}"
+            android:visibility="@{viewModel.viewLogin ? View.VISIBLE : View.GONE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            >
 
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_20"
+                app:srcCompat="@drawable/ic_login_google_white_24dp"
+                />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/title_login_google"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/sp_20"
+                />
+        </FrameLayout>
     </android.support.constraint.ConstraintLayout>
 </layout>
