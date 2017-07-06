@@ -7,6 +7,7 @@ import com.nhahv0902.notebook.BR;
 import com.nhahv0902.notebook.screen.main.MainActivity;
 import com.nhahv0902.notebook.util.Navigator;
 import com.nhahv0902.notebook.util.SharedPrefs;
+import com.nhahv0902.pickpicture.screen.album.AlbumActivity;
 
 import static com.nhahv0902.notebook.util.ConstantUtils.TimeUtil.TIME_DELAY;
 import static com.nhahv0902.notebook.util.SharedPrefs.SharedPrefKey.PREF_IS_LOGIN;
@@ -56,7 +57,7 @@ public class LoginViewModel extends BaseObservable implements LoginContract.View
 
     @Override
     public void onFacebookStartMain() {
-        mNavigator.startActivity(MainActivity.newIntent(mNavigator.getContext()));
+        mNavigator.startActivity(AlbumActivity.newIntent(mNavigator.getContext()));
     }
 
     @Override

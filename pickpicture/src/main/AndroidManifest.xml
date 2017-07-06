@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nhahv0902.pickpicture">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <application>
+        <activity
+            android:name=".screen.album.AlbumActivity"
+            android:theme="@style/AppTheme" />
+    </application>
+
+</manifest>
