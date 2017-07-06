@@ -11,7 +11,9 @@ interface LoginContract {
      * View.
      */
     interface ViewModel extends BaseViewModel<Presenter> {
+        void onFacebookStartMain();
 
+        void onGoogleStartMain();
     }
 
     /**

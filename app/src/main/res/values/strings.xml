@@ -2,4 +2,7 @@
     <string name="app_name">Notebook</string>
     <string name="title_notebook">Notebook</string>
     <string name="title_setting">Setting</string>
+    <string name="login_welcome_notebook">Welcome you  to Note book</string>
+    <string name="title_login_google">Google</string>
+    <string name="text_login_facebook">Facebook</string>
 </resources>
