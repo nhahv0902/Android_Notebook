@@ -5,4 +5,6 @@
     <string name="login_welcome_notebook">Welcome you  to Note book</string>
     <string name="title_login_google">Google</string>
     <string name="text_login_facebook">Facebook</string>
+    <string name="item_like">Like</string>
+    <string name="item_share">Share</string>
 </resources>
