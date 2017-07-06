@@ -56,12 +56,12 @@ public class LoginViewModel extends BaseObservable implements LoginContract.View
 
     @Override
     public void onFacebookStartMain() {
-
+        mNavigator.startActivity(MainActivity.newIntent(mNavigator.getContext()));
     }
 
     @Override
     public void onGoogleStartMain() {
-
+        mNavigator.startActivity(MainActivity.newIntent(mNavigator.getContext()));
     }
 
     @Bindable
